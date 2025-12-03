@@ -736,20 +736,20 @@ const Index = () => {
         <Icon name="Phone" size={28} />
       </a>
 
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl">
-          <DialogHeader>
-            <DialogTitle>Фотография</DialogTitle>
-          </DialogHeader>
-          {selectedImage && (
+      {selectedImage && (
+        <Dialog open={true} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-4xl">
+            <DialogHeader>
+              <DialogTitle>Фотография</DialogTitle>
+            </DialogHeader>
             <img 
               src={selectedImage}
               alt="Увеличенное изображение"
               className="w-full rounded-lg"
             />
-          )}
-        </DialogContent>
-      </Dialog>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };
